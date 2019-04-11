@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.hanwintech.camera" version="1" 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>hanwinCamera</name>
+    <js-module name="hanwinCamera" src="www/hanwinCamera.js">
+        <clobbers target="cordova.plugins.hanwinCamera" />
+    </js-module>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="hanwinCamera">
+                <param name="ios-package" value="hanwinCamera" />
+            </feature>
+        </config-file>
+
+
+        <source-file src="src/ios/hanwinCamera.m" />
+
+        <header-file src="src/ios/src/XCustomCameraViewController.h" />
+        <source-file src="src/ios/src/XCustomCameraViewController.m" />
+
+        <resource-file src="src/ios/src/XCustomCameraViewController.xib"/>
+
+        <resource-file src="src/ios/resources/exchange@2x.png"/>
+        <resource-file src="src/ios/resources/exchange@3x.png"/>
+        <resource-file src="src/ios/resources/flash_close@2x.png"/>
+        <resource-file src="src/ios/resources/flash_close@3x.png"/>
+        <resource-file src="src/ios/resources/flash_open@2x.png"/>
+        <resource-file src="src/ios/resources/flash_open@3x.png"/>
+        <resource-file src="src/ios/resources/flash@2x.png"/>
+        <resource-file src="src/ios/resources/flash@3x.png"/>
+
+        <framework src="AVFoundation.framework" />
+        <framework src="Photos.framework" />
+        <framework src="UIKit.framework" />
+    </platform>
+</plugin>
